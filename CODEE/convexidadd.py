@@ -69,19 +69,21 @@ func, xmin, xmax, x1, x2 = exercises[exercise_name]
 x_mid, y_mid, y_comb, is_convex = solve_exercise(func, x1, x2, λ)
 
 st.subheader(exercise_name)
-st.markdown(f"""
-**Puntos seleccionados:**  
-- \\(x_1 = {x1}, f(x_1) = {func(x1)}\\)  
-- \\(x_2 = {x2}, f(x_2) = {func(x2)}\\)  
+st.markdown(
+    f"""
+    **Puntos seleccionados:**  
+    - x₁ = {x1}, f(x₁) = {func(x1):.2f}  
+    - x₂ = {x2}, f(x₂) = {func(x2):.2f}  
 
-**Combinación convexa:**  
-- \\(x_{\\text{{medio}}} = {x_mid}\\)  
-- \\(f(x_{\\text{{medio}}}) = {y_mid}\\)  
-- Combinación convexa de valores: \\(f(x_1)\\) y \\(f(x_2)\\): {y_comb}  
+    **Combinación convexa:**  
+    - x (medio) = {x_mid:.2f}  
+    - f(x medio) = {y_mid:.2f}  
+    - Combinación convexa de valores: {y_comb:.2f}  
 
-**¿Es la función convexa?**  
-- {'Sí' if is_convex else 'No'}
-""")
+    **¿Es la función convexa?**  
+    - {'Sí' if is_convex else 'No'}
+    """
+)
 
 # Mostrar gráfica
 st.subheader("Gráfica")
